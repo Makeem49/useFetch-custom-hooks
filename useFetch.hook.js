@@ -28,7 +28,9 @@ export default function useFetch(baseURL) {
         return new Promise((resolve, reject) => {
             fetch(baseURL + url, {
                 method : 'post',
-                "Content-Type" : "Application/json",
+                headers : {
+                    "Content-Type" : "Application/json",
+                },
                 body : JSON.stringify(body)
             })
             .then(response = response.json())
