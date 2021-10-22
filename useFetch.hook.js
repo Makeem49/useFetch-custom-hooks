@@ -7,7 +7,7 @@ export default function useFetch(baseURL) {
     function get(url) {
         return new Promise((resolve, reject) => {
             fetch(baseURL + url )
-            .then(response = response.json())
+            .then(response => response.json())
             .then(data => {
                 if(!data) {
                     setIsLoading(false)
@@ -33,7 +33,7 @@ export default function useFetch(baseURL) {
                 },
                 body : JSON.stringify(body)
             })
-            .then(response = response.json())
+            .then(response => response.json())
             .then(data => {
                 if (!data) {
                     setIsLoading(false)
